@@ -4,16 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <h1> Inline template </h1>
-    <fa-other></fa-other>
-    <fa-another>
-      <div>
-        <h1>Hello!</h1>
-        <p>World!</p>
-      </div>
-    </fa-another>
-    <fa-another>
-      <p>Something else ! </p>
-    </fa-another>
+    <fa-databinding></fa-databinding>
   `,
   styles: [`
     h1 {
