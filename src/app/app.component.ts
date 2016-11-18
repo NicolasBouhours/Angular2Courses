@@ -4,8 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <h1> Inline template </h1>
-    <fa-lifecycle *ngIf="!delete"></fa-lifecycle>
+    <fa-lifecycle *ngIf="!delete" [bindable]="boundValue">
+      <p>{{test}}</p>
+    </fa-lifecycle>
     <button (click)="delete = true">Click to delete</button>
+    <button (click)="test = 'Changed value'">Click change content</button>
+    <button (click)="boundValue = 2000">Click to change value</button>
   `,
   styles: [`
     h1 {
@@ -15,4 +19,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   delete = false;
+  test = 'Starting value';
+  boundValue = 1000;
 }

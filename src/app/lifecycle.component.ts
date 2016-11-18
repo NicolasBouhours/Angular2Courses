@@ -1,15 +1,17 @@
-import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, Input,  OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'fa-lifecycle',
   template: `
-    <p>
-      lifecycle Works!
-    </p>
+    <ng-content></ng-content>
+    <hr/>
+    <p>{{bindable}}</p>
   `,
   styles: []
 })
 export class LifecycleComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+
+  @Input() bindable = 1000;
 
   constructor() { }
 
